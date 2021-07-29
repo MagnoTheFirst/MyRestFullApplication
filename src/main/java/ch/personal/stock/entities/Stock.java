@@ -1,10 +1,29 @@
 package ch.personal.stock.entities;
 
-import java.time.LocalDate;
-import java.util.Date;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
+import javax.persistence.*;
+import java.time.LocalDate;
+
+@Entity(name ="stock")
+@Table
 public class Stock {
+
+    @Id
+    @SequenceGenerator
+            (
+                    name="stock_sequence",
+                    sequenceName = "stock_sequence",
+                    allocationSize = 1
+            )
+    @GeneratedValue
+            (
+                    strategy = GenerationType.SEQUENCE,
+                    generator = "stock_sequence"
+            )
     private Long id;
+
     private String name;
     private String description;
     private LocalDate date_of_purchase;
@@ -13,6 +32,17 @@ public class Stock {
     private int durability; // in years
     private LocalDate guarantee;
     private String brand;
+
+    public Stock(Long id,String name, String description, LocalDate date_of_purchase, double price, String type, int durability, LocalDate guarantee, String brand) {
+        this.name = name;
+        this.description = description;
+        this.date_of_purchase = date_of_purchase;
+        this.price = price;
+        this.type = type;
+        this.durability = durability;
+        this.guarantee = guarantee;
+        this.brand = brand;
+    }
 
     public Stock(String name, String description, LocalDate date_of_purchase, double price, String type, int durability, LocalDate guarantee, String brand) {
         this.name = name;
@@ -25,17 +55,8 @@ public class Stock {
         this.brand = brand;
     }
 
+    public Stock() {
 
-    public Stock(Long id, String name, String description, LocalDate date_of_purchase, double price, String type, int durability, LocalDate guarantee, String brand) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.date_of_purchase = date_of_purchase;
-        this.price = price;
-        this.type = type;
-        this.durability = durability;
-        this.guarantee = guarantee;
-        this.brand = brand;
     }
 
     public Long getId() {

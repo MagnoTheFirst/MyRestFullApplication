@@ -1,9 +1,6 @@
 package ch.personal.stock.services;
 
 import ch.personal.stock.entities.Stock;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -13,7 +10,10 @@ import java.util.List;
 @Service
 public class StockService {
 
-    public List<Stock> getStock(){
+    public StockService() {
+    }
+
+    public List<Stock> getStocks(){
         return List.of(
                 new Stock
                         (1L,
