@@ -1,0 +1,12 @@
+POST http://localhost:8081/api/v1/stock
+Content-Type: application/json
+
+{
+  "name":"Laptop stand",
+  "description":"Laptopstand of steel. Color black",
+  "brand": "Brack.ch",
+  "date_of_purchase":"2021-09-01",
+  "price":"120.00",
+  "type":"Environment"
+}
+

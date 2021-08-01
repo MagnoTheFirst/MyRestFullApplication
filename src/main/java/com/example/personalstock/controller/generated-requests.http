@@ -1,0 +1,11 @@
+POST http://localhost:8081/api/v1/stock
+Content-Type: application/json
+
+{
+  "name": "cup",
+  "description": "grey cum 0.3 ml",
+  "date_of_puchase": "2019-12-1",
+  "price" : "5.99",
+  "type":"environment",
+  "brand": "Ikea"
+}

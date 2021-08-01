@@ -4,13 +4,10 @@ package com.example.personalstock.controller;
 import com.example.personalstock.entities.Stock;
 import com.example.personalstock.services.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path="api/v1/stock")
@@ -28,7 +25,11 @@ public class StockController {
         return stockService.getStocks();
     }
 
+    @PostMapping
+    public void addNewStock(@RequestBody Stock stock){
+        stockService.addNewPersonalStock(stock);
 
+    }
 
 }
 
