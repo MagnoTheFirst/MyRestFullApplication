@@ -25,6 +25,11 @@ public class StockController {
         return stockService.getStocks();
     }
 
+    @GetMapping(path = "{stockId}")
+    public Optional<Stock> getSpecificStock(@PathVariable("stockId") Long id){
+        return stockService.getStockById(id);
+    }
+    
     @PostMapping
     public void addNewStock(@RequestBody Stock stock){
         stockService.addNewPersonalStock(stock);
