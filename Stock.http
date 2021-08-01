@@ -1,2 +1,9 @@
-DELETE http://localhost:8081/api/v1/stock/1
+DELETE http://localhost:8081/api/v1/stock/2
 ###
+DELETE http://localhost:8081/api/v1/stock/3
+###
+DELETE http://localhost:8081/api/v1/stock/4
+###
+DELETE http://localhost:8081/api/v1/stock/5
+###
+PUT http://localhost:8081/api/v1/stock/7?name=door

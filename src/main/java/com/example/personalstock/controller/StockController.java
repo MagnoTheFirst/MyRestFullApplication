@@ -36,5 +36,14 @@ public class StockController {
         stockService.removeOneStockObject(id);
     }
 
+
+    @PutMapping(path = "{stockId}")
+    public void updateStockObject(
+            @PathVariable("stockId")Long stockId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String description){
+        stockService.updateStock(stockId, name, description);
+    }
+
 }
 
