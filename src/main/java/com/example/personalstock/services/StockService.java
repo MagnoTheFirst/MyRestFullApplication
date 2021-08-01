@@ -33,4 +33,10 @@ public class StockService {
     }
 
 
+    public void removeOneStockObject(Long stockId) {
+        stockrepo.deleteById(stockId);
+    }
+
+
+
 }

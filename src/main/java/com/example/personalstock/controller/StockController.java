@@ -31,5 +31,10 @@ public class StockController {
 
     }
 
+    @DeleteMapping(path = "{stockId}")
+    public void removeOneStockObject(@PathVariable("stockId") Long id){
+        stockService.removeOneStockObject(id);
+    }
+
 }
 
