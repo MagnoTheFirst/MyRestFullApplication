@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>
+        Simple web Development Template
+    </title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Name</label> x <br>
+        <input name="name" type="text" id="name" class="information"><br>
+        <label for="">Beschreibung</label> <br>
+        <input name="description" type="text" id="description" class="information"><br>
+        <label for="">Beschreibung</label> x<br>
+        <input name="purchasedate" type="text" class="information"><br>
+        <label for="">Preis</label> <br>
+        <input name="price" type="text" class="information"><br>
+        <label for="">Typ</label> <br>
+        <input name="typus" type="text" class="information"><br>
+        <label for="">Haltbarkeit</label> <br>
+        <input name="duration" type="text" class="information"><br>
+        <label for="">Garantieablaufdatum</label> <br>
+        <input name="guarantee" type="text" class="information"><br>
+        <label for="">Marke</label> <br>
+        <input name="brand" type="text" class="information"><br>
+        <br>
+    </form>
+    <button id="button">submit</button>
+    <script>
+        /*sammelt die infos aus allen Inputfeldern.  */
+
+        $(document).ready(function() {
+            $.fn.getContent = function() {
+                var name = $("input[type=text]").map(function() {
+                    return $(this).val();
+                }).get();
+
+                return name;
+            }
+            $("button").click(function() {
+                var a = getContent();
+                alert("hello " + a);
+            });
+
+        });
+    </script>
+</body>

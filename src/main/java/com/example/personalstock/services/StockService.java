@@ -37,7 +37,6 @@ public class StockService {
         stockrepo.saveAndFlush(stock);
     }
 
-
     public void removeOneStockObject(Long stockId) {
         stockrepo.deleteById(stockId);
     }

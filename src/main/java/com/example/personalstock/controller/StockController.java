@@ -20,16 +20,25 @@ public class StockController {
         this.stockService = stockService;
     }
 
+
     @GetMapping
+    @CrossOrigin(origins = "http://localhost:8081/list.html", maxAge = 3600)
     public List<Stock> getStock(){
         return stockService.getStocks();
     }
 
+    @CrossOrigin
     @GetMapping(path = "{stockId}")
     public Optional<Stock> getSpecificStock(@PathVariable("stockId") Long id){
         return stockService.getStockById(id);
     }
-    
+
+    @CrossOrigin
+    @GetMapping(path = "{stockName}")
+    public Optional<Stock> getSpecificStockByName(@PathVariable("stockName") String name){
+        return stockService.getStockByName(name);
+    }
+
     @PostMapping
     public void addNewStock(@RequestBody Stock stock){
         stockService.addNewPersonalStock(stock);

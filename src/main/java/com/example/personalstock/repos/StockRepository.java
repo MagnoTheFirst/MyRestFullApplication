@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 public interface StockRepository extends JpaRepository<Stock, Long>
 {
 
-    @Query("SELECT s FROM Stock s WHERE s.name = ?1")
+    @Query("SELECT DISTINCT s FROM Stock s WHERE s.name = ?1")
     Optional<Stock> findByName(String name);
 
     @Query("SELECT s FROM Stock s WHERE s.date_of_purchase = ?1")
