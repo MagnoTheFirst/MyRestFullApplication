@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <title>
         Simple web Development Template
 
     </title>
-
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $.get("localhost:8081/api/v1/stock", function(data) {
-                    alert("Data: status");
-                });
-            });
-        });
-    </script>
 </head>
 
 <body>
     <div id="div1">
-        <h2>Let jQuery AJAX Change This Text</h2>
+        <h2>Your personal Stock</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                    <td>Type</td>
+                    <td>Gauarantee</td>
+                    <td>Durability</td>
+                    <td>Brand</td>
+                </tr>
+            </thead>
+            <tr>
+                <td th:each="stock: ${stock.id} "></td>
+                <td th:each="stock: ${stock.name} "></td>
+                <td th:each="stock: ${stock.description} "></td>
+            </tr>
+        </table>
     </div>
 
 

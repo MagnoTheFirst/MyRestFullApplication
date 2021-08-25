@@ -4,6 +4,7 @@ package com.example.personalstock.controller;
 import com.example.personalstock.entities.Stock;
 import com.example.personalstock.services.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,6 @@ public class StockController {
     public StockController(StockService stockService) {
         this.stockService = stockService;
     }
-
 
     @GetMapping
     @CrossOrigin(origins = "http://localhost:8081/list.html", maxAge = 3600)

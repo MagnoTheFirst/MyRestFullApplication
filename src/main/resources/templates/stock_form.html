@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Title</title>
+</head>
+<body>
+    <h1>Objekt eintragen</h1>
+    <form action="#" th:action="@{/stock_form}" th:object="${stock}" method="post">
+        <label>Name:</label><br>
+        <input type="text" th:field="*{name}" /><br/>
+        <label>Beschrieb:</label><br>
+        <input type="text" th:field="*{description}" /><br/>
+        <label>Beschaffungsdatum:</label><br>
+        <input type="text" th:field="*{date_of_purchase}" /><br/>
+        <label>Preis:</label><br>
+        <input type="text" th:field="*{price}" /><br/>
+        <label>Typ:</label><br>
+        <input type="text" th:field="*{type}" /><br/>
+        <label>Haltbarkeit:</label><br>
+        <input type="text" th:field="*{durability}" /><br/>
+        <label>Garantie:</label><br>
+        <input type="text" th:field="*{guarantee}" /><br/>
+        <label>Marke:</label><br>
+        <input type="text" th:field="*{brand}" /><br/>
+
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+</html>
