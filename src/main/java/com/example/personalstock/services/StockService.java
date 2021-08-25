@@ -29,11 +29,13 @@ public class StockService {
         return stockrepo.findByName(name);
     }
 
+    public Optional<Stock> getStockById(Long id){
+        return stockrepo.findById(id);
+    }
 
     public void addNewPersonalStock(Stock stock){
         stockrepo.saveAndFlush(stock);
     }
-
 
     public void removeOneStockObject(Long stockId) {
         stockrepo.deleteById(stockId);

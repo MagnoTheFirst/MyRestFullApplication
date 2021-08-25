@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>
+        Simple web Development Template
+
+    </title>
+</head>
+
+<body>
+    <div id="div1">
+        <h2>Your personal Stock</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                    <td>Type</td>
+                    <td>Gauarantee</td>
+                    <td>Durability</td>
+                    <td>Brand</td>
+                </tr>
+            </thead>
+            <tr>
+                <td th:each="stock: ${stock.id} "></td>
+                <td th:each="stock: ${stock.name} "></td>
+                <td th:each="stock: ${stock.description} "></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <button>Get External Content</button>
+</body>
