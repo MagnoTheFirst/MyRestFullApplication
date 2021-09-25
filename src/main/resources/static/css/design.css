@@ -1,0 +1,36 @@
+
+@media only screen and (max-width: 650px) {
+    body {
+        background-color: lightblue;
+    }
+    .ps-form{
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 25em;
+    }
+
+    #description{
+        height: 5em;
+        width: 25em;
+    }
+
+    h1{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .container{
+        margin-top: 25%;
+    }
+
+    #btn-go-back{
+        margin-top: 10%;
+    }
+
+    span {
+        display: inline-block;
+        width: max-content;
+        text-align: left;
+    }
+}
+

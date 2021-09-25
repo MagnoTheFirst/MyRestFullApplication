@@ -27,6 +27,11 @@ public class StockFormController {
         return "stock_form";
     }
 
+    @GetMapping("/stock_submitted")
+    public String redirect(){
+        return "stock_form";
+    }
+
     @PostMapping("/stock_form")
     public String submitForm(@ModelAttribute("stock") Stock stock) {
         stockService.addNewPersonalStock(stock);

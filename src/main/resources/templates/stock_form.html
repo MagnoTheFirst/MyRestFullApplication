@@ -2,30 +2,48 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Title</title>
+    <title>Laneri&Lüthi</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../static/css/design.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .jumbotron{text-align: center}
+
+    </style>
+
+
 </head>
 <body>
-    <h1>Objekt eintragen</h1>
-    <form action="#" th:action="@{/stock_form}" th:object="${stock}" method="post">
-        <label>Name:</label><br>
-        <input type="text" th:field="*{name}" /><br/>
-        <label>Beschrieb:</label><br>
-        <input type="text" th:field="*{description}" /><br/>
-        <label>Beschaffungsdatum:</label><br>
-        <input type="text" th:field="*{date_of_purchase}" /><br/>
-        <label>Preis:</label><br>
-        <input type="text" th:field="*{price}" /><br/>
-        <label>Typ:</label><br>
-        <input type="text" th:field="*{type}" /><br/>
-        <label>Haltbarkeit:</label><br>
-        <input type="text" th:field="*{durability}" /><br/>
-        <label>Garantie:</label><br>
-        <input type="text" th:field="*{guarantee}" /><br/>
-        <label>Marke:</label><br>
-        <input type="text" th:field="*{brand}" /><br/>
+    <h1 class="jumbotron">Objekt eintragen</h1>
 
-        <button type="submit">Register</button>
+    <form action="#" th:action="@{/stock_form}" th:object="${stock}" method="post" class="ps-form">
+            <label>Name:</label><br>
+            <input type="text" th:field="*{name}" class="form-control"/><br/>
+            <label>Beschrieb:</label><br>
+            <input type="text" th:field="*{description}" id="description" class="form-control"/><br/>
+            <label>Beschaffungsdatum:</label><br>
+            <input type="text" th:field="*{date_of_purchase}" class="form-control"/><br/>
+            <label>Preis:</label><br>
+            <input type="text" th:field="*{price}" class="form-control" /><br/>
+            <label>Typ:</label><br>
+            <input type="text" th:field="*{type}" class="form-control"/><br/>
+            <label>Haltbarkeit:</label><br>
+            <input type="text" th:field="*{durability}" class="form-control"/><br/>
+            <label>Garantie:</label><br>
+            <input type="text" th:field="*{guarantee}" class="form-control"/><br/>
+            <label>Marke:</label><br>
+            <input type="text" th:field="*{brand}" class="form-control"/><br/>
+        <button type="submit" class="btn btn-outline-success">submit</button>
     </form>
-
 </body>
 </html>

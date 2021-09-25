@@ -2,17 +2,44 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Laneri&Lüthi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+
+        h1{ text-align: center; }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <p>
-    <h1>Hausrat</h1>
+    <h1 class="jumbotron" >Hausrat</h1>
 </p>
 
 <div th:if="${ not#lists.isEmpty(stocks)}">
-    <table>
+    <table class="table">
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
         <tr>
+            <thead class="thead-light">
             <th>ID</th>
             <th>Name</th>
             <th>Beschrieb</th>
@@ -23,11 +50,21 @@
             <th>Typ</th>
             <th>Marke</th>
         </tr>
+            </thead>
+        <tbody>
         <tr th:each="stock : ${stocks}">
-            <td th:text="${stock.id}"></td>
+            <input type="checkbox" name="active" th:checked="${stock.id}" />
+            <td th:text=""></td>
             <td th:text="${stock.name}"></td>
             <td th:text="${stock.description}"></td>
+            <td th:text="${stock.price}"></td>
+            <td th:text="${stock.durability}"></td>
+            <td th:text="${stock.date_of_purchase}"></td>
+            <td th:text="${stock.guarantee}"></td>
+            <td th:text="${stock.type}"></td>
+            <td th:text="${stock.brand}"></td>
         </tr>
+        <tbody>
         </table>
     </div>
 </body>
